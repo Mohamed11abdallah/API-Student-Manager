@@ -45,6 +45,10 @@ npm install
 
 ### 5. Configurez Prisma :
 
+```bash
+npx prisma migrate deploy
+```
+
 ### 6. Démarrez le projet :
 
 ```bash
