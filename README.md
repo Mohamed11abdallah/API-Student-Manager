@@ -86,37 +86,4 @@ Pour voir les endpoints, importez la collection Postman dans votre application :
 
 ## Auteur
 
-[semThillo](https://github.com/semthillo)
-
 [MohamedAbdallah](https://github.com/Mohamed11abdallah)
-
-[MohamedSoumare](https://github.com/MohamedSoumare)
-
-src/
-├── assets/ # Pour vos images, styles, etc.
-├── components/ # Composants réutilisables
-│ ├── NavBar.vue # Barre de navigation
-├── views/ # Composants représentant des pages principales
-│ ├── Home.vue # Page d'accueil
-│ ├── students/ # Dossier pour les étudiants
-│ │ ├── AddStudent.vue
-│ │ ├── EditStudent.vue
-│ │ ├── ListStudent.vue
-│ ├── modules/ # Dossier pour les modules
-│ │ ├── AddModule.vue
-│ │ ├── EditModule.vue
-│ │ ├── ListModule.vue
-│ ├── payements/ # Dossier pour les paiements
-│ │ ├── AddPayement.vue
-│ │ ├── EditPayement.vue
-│ │ ├── ListPayement.vue
-│ ├── register/ # Dossier pour les inscriptions
-│ │ ├── AddRegister.vue
-│ │ ├── EditRegister.vue
-│ │ ├── ListRegister.vue
-├── router/ # Pour la gestion des routes
-│ ├── index.js # Définition des routes
-├── services/ # Services pour interagir avec le backend (Axios)
-│ ├── api.js # Configuration Axios et méthodes API
-├── App.vue # Composant principal
-├── main.js # Fichier d'entrée pour l'application
