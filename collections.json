@@ -1,0 +1,231 @@
+{
+    "info": {
+		"_postman_id": "41b69d75-e594-4ba4-b8e4-208549842528",
+		"name": "Learner_management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38822647"
+	},
+	"item": [
+		{
+			"name": "students",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "registration-update",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "students/add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fullName\": \"Moussa Diop\",\r\n  \"phoneNumber\": \"34554321\",\r\n  \"email\": \"moussadiop@gmail.com\",\r\n  \"address\": \"123 Rue Principale\",\r\n  \"tutor\": \"Marie Dupont\",\r\n  \"status\": \"ACTIVE\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/students/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"students",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "students/update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fullName\": \" Med Dupont\",\r\n  \"phoneNumber\": \"44554321\",\r\n  \"email\": \"j@gmail.com\",\r\n  \"address\": \"123 Rue Principale\",\r\n  \"tutor\": \"Marie Dupont\",\r\n  \"status\": \"ACTIVE\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/students/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"students",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "students/delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/students/delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"students",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registrations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/registrations/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"registrations",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registration/add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dateRegister\": \"2024-12-14\",\r\n  \"studentId\": 2,\r\n  \"moduleId\": 3,\r\n  \"startDate\": \"2024-12-20\",\r\n  \"amount\": 500\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/registrations/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"registrations",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modules/add",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "modules/update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Module 2\",\r\n    \"duration\": 45,\r\n    \"price\": 300.00,\r\n    \"status\": \"BEGINNER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/modules/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"modules",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modules",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/api/modules/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"modules",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "modules/delete",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "registration/delete",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,90 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Module {
+  id            Int            @id @default(autoincrement())
+  name          String         @db.VarChar(50)
+  price         Decimal        @db.Decimal(10, 2)
+  status        ModuleStatus
+  duration      Int
+  payments      Payment[]
+  registrations Registration[]
+
+  @@map("modules")
+}
+
+model Student {
+  id            Int            @id @default(autoincrement())
+  fullName      String         @map("full_name") @db.VarChar(50)
+  phoneNumber   String         @map("phone_number") @db.VarChar(15)
+  email         String         @db.VarChar(100)
+  address       String         @db.VarChar(100)
+  tutor         String         @db.VarChar(50)
+  status        StudentStatus
+  payments      Payment[]
+  registrations Registration[]
+
+  @@map("students")
+}
+
+model Registration {
+  id           Int       @id @default(autoincrement())
+  dateRegister DateTime  @map("date_register")
+  startDate    DateTime  @map("start_date")
+  endDate      DateTime  @map("end_date")
+  amount       Decimal   @db.Decimal(10, 2)
+  studentId    Int
+  moduleId     Int
+  rest         Decimal?  @db.Decimal(10, 2)
+  payments     Payment[]
+  module       Module    @relation(fields: [moduleId], references: [id])
+  student      Student   @relation(fields: [studentId], references: [id])
+
+  @@map("registrations")
+}
+
+model Payment {
+  id             Int           @id @default(autoincrement())
+  paymentDate    DateTime      @map("payment_date")
+  amount         Decimal       @db.Decimal(10, 2)
+  payer          String        @db.VarChar(50)
+  payerNumber    String        @map("payer_number") @db.VarChar(15)
+  paymentMode    PaymentMethod
+  registrationId Int
+  moduleId       Int
+  studentId      Int
+  module         Module        @relation(fields: [moduleId], references: [id])
+  registration   Registration  @relation(fields: [registrationId], references: [id])
+  student        Student       @relation(fields: [studentId], references: [id])
+
+  @@map("payments")
+}
+
+enum StudentStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+}
+
+enum ModuleStatus {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+}
+
+enum RegistrationStatus {
+  COMPLETED
+  CANCELLED
+}
+
+enum PaymentMethod {
+  CARD
+  BANK_TRANSFER
+  CASH
+}
